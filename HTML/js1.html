@@ -1,0 +1,62 @@
+<script>
+  document.write("Hello");
+  alert("Hello there!");
+</script>
+
+<script src="ornek.js"></script>
+
+<script type="text/javascript">
+  // Global variable
+  var gd = "Global Variable";
+  var sayi = 1;
+  function kont() {
+    // Local variable
+    // firstly local
+    var gd = "Local Variable";
+    document.write(gd);
+  }
+  kont();
+  document.write(gd);
+</script>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      function MESAJ() {
+        alert("Hello there!");
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" onclick="MESAJ()" value="Click!" />
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function GOSTER(kitap) {
+        var kittip = kitap.getAttribute("data-kitap-tip");
+        alert(
+          "" +
+            kitap.innerHTML +
+            " TURUNDE BIR KITAP " +
+            kittip +
+            " LERDEN OLUSUR"
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <h1>KITAPLAR</h1>
+    <p>Kitaplar icin tikla...:</p>
+
+    <ul>
+      <li onclick="GOSTER(this)" id="ro" data-kitap-tip="ROMAN">ROMAN</li>
+      <li onclick="GOSTER(this)" id="an" data-kitap-tip="ANI">ANI</li>
+      <li onclick="GOSTER(this)" id="si" data-kitap-tip="SIIR">SIIR</li>
+    </ul>
+  </body>
+</html>

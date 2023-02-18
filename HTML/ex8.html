@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #canv {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="canv" width="150" height="100"></canvas>
+  </body>
+</html>
+
+<canvas id="c"></canvas>
+<script>
+  var canvas = document.getElementById("c"),
+    context = canvas.getContext("2d");
+  context.fillStyle = "blue";
+  context.fillRect(10, 20, 200, 100);
+</script>
+
+<canvas id="c"></canvas>
+<script>
+  var canvas = document.getElementById("c"),
+    context = canvas.getContext("2d");
+  context.fillStyle = "yellow";
+  context.fillRect(25, 30, 350, 250);
+  context.strokeStyle = "#fa00ee";
+  context.lineWidth = 6;
+  context.lineCap = "round";
+  context.arc(40, 30, 40, 0, Math.PI, false);
+  context.stroke();
+</script>
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <canvas id="ornek" width="200" height="200"> </canvas>
+    <script>
+      var c = document.getElementById("ornek");
+      var context = c.getContext("2d");
+      context.moveTo(0, 0);
+      context.lineTo(300, 150);
+      context.strokeStyle = "#ee00ee";
+      context.lineWidth = 20;
+      context.stroke();
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <svg height="150" width="150">
+      <circle
+        cx="75"
+        cy="75"
+        r="60"
+        stroke="blue"
+        stroke-width="4"
+        fill="green"
+      />
+    </svg>
+  </body>
+
+  <svg height="250" width="450">
+    <polyline
+      points="20,25 40,45 60,70 90,125 127,145 205,190"
+      style="fill: none; stroke: blue; stroke-width: 5"
+    />
+  </svg>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="KUL_DENE">KULLANICI KONUMU:</p>
+    <button onclick="getuserLocation()">KONUM KONTROL</button>
+    <div id="HAR_DENE"></div>
+    <script>
+      var x = document.getElementById("KUL_DENE");
+      function getuserLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            showuserPosition,
+            showbrowserError
+          );
+        } else {
+          x.innerHTML = "TARAYICI GEOLOCATION I DESTEKLEMIYOR";
+        }
+      }
+
+      function showuserPosition(position) {
+        var latlon = position.coords.latitude + "," + position.coords.longitude;
+        var img_url =
+          "http://maps.googleapis.com/maps/api/staticmap?center=" +
+          latlon +
+          "&zoom=14&size=400x300&sensor=false";
+        document.getElementById("HAR_DENE").innerHTML =
+          "<img src='" + img_url + "'>";
+      }
+
+      function showbrowserError(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            x.innerHTML = "KULLANICI GEOLOCATION TALEBINI REDDETTI";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "KONUM BILGISI YOK";
+            break;
+          case error.TIMEOUT:
+            x.innerHTML = "ZAMAN ASIMI";
+            break;
+          case error.UNKNOWN_ERROR:
+            x.innerHTML = "BILINMEYEN HATA";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showCurrentLocation);
+      } else {
+        alert("Geolocation API DESTEKLENMIYOR");
+      }
+
+      function showCurrentLocation(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var coords = new google.maps.LatLng(latitude, longitude);
+        var mapOptions = {
+          zoom: 20,
+          center: coords,
+          mapTypeControl: true,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+        };
+
+        //HARITAYI OLUSTUR VE HTML5 DIV ICINE KOY
+
+        map = new google.maps.Map(
+          document.getElementById("HARITA_M"),
+          mapOptions
+        );
+        //ILK ISARETLEYICIYI KOY
+        var marker = new google.maps.Marker({
+          position: coords,
+          map: map,
+          title: "BULUNULAN KONUM!",
+        });
+      }
+    </script>
+  </head>
+  <style>
+    #HARITA_M {
+        height: 450px;
+        width: 750px;
+  </style>
+  <body>
+    <div>
+      <h2>HTML5-GOOGLE HARITASINDAKI YERINIZ</h2>
+      <div id="HARITA_M"></div>
+    </div>
+  </body>
+</html>

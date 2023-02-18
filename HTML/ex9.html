@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function KOPYA()
+            {
+                document.getElementById("alan2").value=document.getElementById("alan1").value;
+                document.getElementById("alan3").value=document.getElementById("alan1").value;
+            }
+        </script>
+    </head>
+    <body>
+       
+        1.ALAN: <input type="text" id="alan1" value="GUZEL YURDUM TURKIYE..."><br>
+           2.ALAN: <input type="text" id="alan2">
+               3.ALAN: <input type="text" id="alan3">                <br><br>
+                <button onclick="KOPYA()">METNI KOPYALA</button>
+               
+                <p>Düğme tıklanınca bir alanından 2 ve 3 alanına kopyalama yapılıyor</p>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('click',KOPYA,false);
+            function KOPYA(e)
+            {
+                document.getElementById("alan2").value=document.getElementById("alan1").value;
+                document.getElementById("alan3").value=document.getElementById("alan1").value;
+            }
+        </script>
+    </head>
+    <body>
+        1.ALAN: <input type="text" id="alan1" value="GUZEL YURDUM TURKIYE..."><br>
+           2.ALAN: <input type="text" id="alan2">
+               3.ALAN: <input type="text" id="alan3">                <br><br>
+                <button onclick="KOPYA()">METNI KOPYALA</button>
+               
+                <p>Düğme tıklanınca bir alanından 2 ve 3 alanına kopyalama yapılıyor</p>
+               
+    </body>
+</html>
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+    </head>
+    <body>
+        <canvas id="ornek" width="300" height="100" style= "background:blue">
+        </canvas>
+        <script>
+            var canvas = document.getElementById('ornek');
+            var context = canvas.getContext('2d');
+            canvas.addEventListener('mousemove', handleMoveEvent, false);
+
+            function handleMoveEvent(olay) {
+                var mousePos = getMousePos(canvas, olay);
+                var ileti = 'Mouse KONUMU: ' + mousePos.x + ',' + mousePos.y;
+                YAZileti(canvas, ileti);
+            }
+
+        function YAZileti(canvas, ileti) {
+            var context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillStyle = 'black';
+            context.font = '20px Courier';
+            context.fillText(ileti, 15, 30);
+        }
+       
+        function getMousePos(canvas, olay) {
+            var rect = canvas.getBoundingClientRect();
+            return {
+                x: olay.clientX - rect.left,
+                y: olay.clientY - rect.top
+            };
+        }
+            </script>
+    </body>
+</html>
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style type="text/css">
+            #KUTU1, #KUTU2 {
+                float:left;padding:10px;margin:10px; -moz-user-select:none;
+            }
+        #KUTU1 { background-color: #6633EF; width:85px; height:85px;  }
+        #KUTU2 { background-color: #FF6699; width:160px; height:170px; }
+            </style>
+        <script type="text/javascript">
+            function dragStart(ev) {
+                ev.dataTransfer.effectAllowed='move';
+                ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+                ev.dataTransfer.setDragImage(ev.target,0,0);
+                return true;
+            }
+        </script>
+    </head>
+
+    <body>
+        <center>
+            <h2>SURUKLE BIRAK-HTML5</h2>
+            <div>UYGULA</div>
+            <div id="KUTU1" draggable="true"
+                ondragstart="return dragStart(event)">
+                <p>SURUKLE</p>
+            </div>
+            <div id="KUTU2"></div>
+        </center>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>VERIYI YEREL BELLEKTE SAKLA</title>
+        <script>
+            function sendData() {
+                var ANAH = document.getElementById('ANAH').value;
+                var DEGER = document.getElementById('DEGER').value;
+                localStorage.setItem(ANAH, DEGER);
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>VERIYI YEREL BELLEKTE SAKLA</h1>
+        <form>
+            <div>
+                <label for="ANAH">ANAH: </label>
+                <input type="text" id="ANAH" name="ANAH" placeholder="ANAH" />
+            </div>
+            <div>
+                <label for="DEGER">DEGER: </label>
+                <input type="text" id="DEGER" name="DEGER" placeholder="DEGER" />
+            </div>
+            <button type="submit" onclick="sendData()">VERIYI GONDER</button>
+        </form>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function SAYAC_TIKLA() {
+                if(typeof(Storage) !== "TANIMSIZ") {
+                    if (sessionStorage.clickcount) {
+                        sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                    } else {
+                        sessionStorage.clickcount = 1;
+                    }
+                    document.getElementById("SONUC").innerHTML = "BU OTURUMDA DUGMEYE ... " + sessionStorage.clickcount + " KEZ BASTINIZ.";
+                } else {
+                    document.getElementById("SONUC").innerHTML = "TARAYICINIZ BU NESNEYI DESTEKLEMIYOR";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <p><button onclick="SAYAC_TIKLA()" type="button">TIKLAYINIZ</button></p>
+        <div id="SONUC"></div>
+        <p>SAYACI ARTIRMAK ICIN TIKLAYINIZ</p>
+        <p>TARAYICI VEYA PENCEREYI KAPATARAK YENIDEN DENEYINIZ</p>
+    </body>
+</html>
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>SAYMA</title>
+        <script>
+        function SAY(){
+                for (var i = 0; i <= 10000; i += 1){
+                    var j = i;
+                }
+                alert("ITERASYON SAYISI=" + j );
+        }
+
+        function MESAJ(){
+            alert("GUZEL TURKIYEM...." );
+        }
+        </script>
+    </head>
+
+    <body>
+        <input type="button" onclick="SAY();" value="SAYMA" />
+        <input type="button" onclick="MESAJ();" value="MESAJ" />
+    </body>
+</html>

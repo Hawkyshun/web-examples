@@ -1,0 +1,135 @@
+<!-- <html>
+
+<head>
+</head>
+
+<body text="blue" bgcolor="pink">
+    <SCRIPT LANGUAGE="javaSCRIPT">
+        var say, sayac, toplam;
+        say = window.prompt("Enter a Integer, or Enter a Negative to stop.", "0");
+        say = parseFloat(say);
+        sayac = 0;
+        toplam = 0;
+        while (say > 0) {
+            sayac++;
+            toplam += say;
+            say = window.prompt("Enter a Integer, or Enter a Negative to stop.", "0");
+            say = parseFloat(say);
+        }
+        document.write("<H3 >Total Integers=" + sayac + "</H3>");
+        document.write("<H3 >Equal of Integers=" + toplam + "</H3>");
+    </SCRIPT>
+</body>
+
+</html> -->
+
+
+<!-- <html>
+
+<head>
+</head>
+
+<body bgColor="pink" text="blue">
+    <SCRIPT LANGUAGE="javaSCRIPT">
+        var fakt, i, n
+        n = parseInt(window.prompt("n....", "0"));
+        fakt = 1;
+        for (i = 1; i <= n; i++)
+            fakt = fakt * i;
+        document.write("<H2>" + n + "!=" + fakt + "</H2>");
+    </SCRIPT>
+</body>
+
+</html> -->
+
+<html>
+
+<head>
+    <TITLE>FOR</TITLE>
+</head>
+
+<body bgColor="pink">
+    <SCRIPT LANGUAGE="javaSCRIPT">
+        document.writeln("<TABLE BORDER = '2' WIDTH = '50%'>");
+        document.writeln("<TR><TD WIDTH = '80'><B>SAYI</B></TD>");
+        document.writeln(
+            "<TD><B>SAYININ KARESİ</B></TD>");
+        document.writeln(
+            "<TD><B>SAYININ KÜBÜ</B></TD></TR>");
+        for (var i = 1; i <= 15; ++i) {
+            kare = i * i;
+            kup = i * i * i;
+            document.writeln("<TR><TD>" + i + "</TD><TD>" +
+                kare + "</TD><TD>" + kup + "</TD></TR>");
+
+        }
+        document.writeln("</TABLE>");
+    </SCRIPT>
+</body>
+
+</html>
+
+<HTML>
+
+<HEAD>
+    <SCRIPT LANGUAGE="JAVASCRIPT">
+        var i, j;
+        for (i = 1; i <= 10; i++) {
+            for (j = 1; j <= 10; j++) {
+                document.write(i * j, " ");
+            }
+            document.write("<BR>");
+        }
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+</BODY>
+
+</HTML>
+
+<HTML>
+
+<HEAD>
+
+    <SCRIPT LANGUAGE="JAVASCRIPT">
+        var a;
+        document.write("<H3>1.ORTA AVRUPA TURU<H3>")
+        document.write("<H3>2.AMERIKA TURU<H3>")
+        document.write("<H3>3.UZAK DOGU TURU<H3>")
+
+        a = window.prompt("SECIMINIZ...")
+
+        switch (parseInt(a)) {
+
+            case 1:
+                {
+                    document.write("<H3>UCAK VIY(3) BUDAPES.(2) PRAG(2)<H3>");
+                    document.write("<H3>4 * OTELLER O.K 1700$<H3>");
+                    break;
+                }
+
+            case 2:
+                {
+                    document.write("<H3>UCAK NEW YORK(4)(3) BOSTON.(2) LOS ANGELES(4)<H3>");
+                    document.write("<H3>5 * OTELLER O.K 3700$<H3>");
+                    break;
+                }
+
+            case 3:
+                {
+                    document.write("<H3>UCAK BANG KONG(3) HONG KONG.(3) TOKYO(4)<H3>");
+                    document.write("<H3>5 * OTELLER O.K 4000$<H3>");
+                    break;
+                }
+
+            default: window.alert("SECIMINIZ HATALI...");
+
+        }
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+</BODY>
+
+</HTML>

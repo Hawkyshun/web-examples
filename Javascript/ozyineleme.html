@@ -1,0 +1,36 @@
+<!-- JavaScript'te bir fonksiyon özyineli (rekürsif, İng. Recursive) olabilir. Özyineli fonksiyon kendini çağırabilen fonksiyondur. Örneğin aşağıdaki faktöriyel fonksiyonu bu türde bir fonksiyondur: -->
+
+<!-- ​function fakt(n)
+{
+if ((n == 0) || (n == 1))
+return 1
+else {
+result = (n * fakt(n-1) )
+return result
+}
+}
+Aşağıdaki HTML-JavaScript uygulaması bu fonksiyonu tanımlamakta ve kullanmaktadır. Bu örnekte faktöriyel hesaplayan özyineli bir JavaScript fonksiyonu ve bu fonksiyonun çağrılmasını göreceğiz: -->
+
+​<html>
+
+<head>
+    <TITLE></TITLE>
+</head>
+
+<BODY>
+    <H3>JAVASCRIPT UYGULAMALARI</H3>
+    <SCRIPT LANGUAGE="JAVASCRIPT">
+        function fakt(n) {
+            if ((n == 0) || (n == 1))
+                return 1
+            else {
+                result = (n * fakt(n - 1))
+                return result
+            }
+        }
+        for (i = 5; i <= 20; i = i + 3)
+            document.write("<H3>" + i + "!=" + fakt(i) + "</H3>");
+    </SCRIPT>
+</BODY>
+
+</html>

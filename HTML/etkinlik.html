@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENEYAP TÜRKİYE 2024 Bootstrap Kampı</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #333;
+        }
+        header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+        }
+        .navbar .logo img {
+            width: 100px; /* Logoyu büyüttük */
+            height: auto;
+        }
+        .navbar a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 30px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .card h5 {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #f1c40f;
+            border-color: #f1c40f;
+            color: #333;
+        }
+        .btn-primary:hover {
+            background-color: #f39c12;
+            border-color: #f39c12;
+        }
+        .footer {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #f1c40f;
+        }
+        .countdown {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .map-container {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+        .accordion-button:not(.collapsed) {
+            color: #e74c3c;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://cdn.deneyap.org/media/upload/userFormUpload/Fm1PfjpBAHaPOlOx9aU8iHF2pVNuUSxK.png" alt="Coderspace Logo">
+        </div>
+        <div>
+            <a href="#">Kaynaklar</a>
+            <a href="#">Kayıt Ol</a>
+            <a href="#">Giriş</a>
+            <a href="#">TR / EN</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h5>Katılım Detayları</h5>
+            <ul class="list-unstyled">
+                <li><i class="ri-calendar-line"></i> Son Başvuru Tarihi: <strong>30 Ağustos 2024 Cuma - 23:59</strong></li>
+                <li><i class="ri-time-line"></i> Başlangıç / Bitiş Tarihleri: <strong>7 Ekim 2024 Pazartesi - 10:00</strong> / <strong>25 Ekim 2024 Cuma - 16:00</strong></li>
+                <li><i class="ri-map-pin-line"></i> Konum:</li>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3115.2595947403665!2d39.16839477696087!3d38.665901671774364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4076c027bd445183%3A0xca8b94f07230e756!2zRUxBWknEniDFnkVIxLBUIE1VQU1NRVIgRkFSVUsgU0FMR0FSIEdFTsOHTMSwSyBNRVJLRVrEsA!5e0!3m2!1str!2str!4v1724597371857!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <li><i class="ri-building-4-line"></i> Eğitmen:</li>
+                <a href="https://tr.linkedin.com/in/harunbiradlioffical" title="Eğitmenimiz Harun Biradlı'nın LinkedIn Profili" target="_blank"><strong>Harun Biradlı</strong></a>
+            </ul>
+            <p class="countdown" id="countdown"></p>
+            <a href="#" class="btn btn-primary">
+                Hemen Başvur <i class="ri-arrow-right-s-line"></i>
+            </a>
+        </div>
+
+        <!-- Bootstrap ve DENEYAP Türkiye hakkında bilgi kısmı -->
+        <div class="card">
+            <h5>Eğitim Detayları</h5>
+            <p><strong>Bootstrap:</strong> Bootstrap, açık kaynaklı bir CSS çerçevesidir. Web geliştirme sürecini hızlandırmak için kullanılan bu çerçeve, HTML, CSS ve JavaScript bileşenlerini içerir. Kullanıcı dostu arayüzler oluşturmayı kolaylaştırır ve responsive tasarımlar sunar.</p>
+            <p><strong>DENEYAP Türkiye:</strong> DENEYAP Türkiye, gençlerin teknoloji alanındaki yetkinliklerini artırmayı amaçlayan bir projedir. Teknolojik yenilikler ve eğitimlerle gençleri destekler ve onların gelecekteki kariyerlerine yön vermelerine yardımcı olur.</p>
+        </div>
+
+        <!-- Sıkça Sorulan Sorular -->
+        <div class="card">
+            <h5>Sıkça Sorulan Sorular</h5>
+            <div class="accordion" id="faqAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Bootstrap nedir?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Bootstrap, HTML, CSS ve JavaScript ile web sayfalarını oluşturmayı kolaylaştıran açık kaynaklı bir çerçevedir. Özellikle responsive ve mobil uyumlu tasarımlar için kullanılır.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                DENEYAP Türkiye'nin amacı nedir?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            DENEYAP Türkiye, gençlerin teknoloji alanında bilgi ve becerilerini artırmayı, yenilikçi düşünme yeteneklerini geliştirmeyi ve onları geleceğin teknoloji liderleri olarak yetiştirmeyi amaçlar.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Bootstrap kullanmak zor mu?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Bootstrap kullanımı oldukça kolaydır. Çerçeve, kullanımı basit ve önceden tanımlanmış CSS sınıfları ve JavaScript bileşenleri sunar, bu da hızlı bir şekilde şık ve fonksiyonel web sayfaları oluşturmanıza yardımcı olur.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <a href="https://www.instagram.com" target="_blank" class="ri-instagram-line"></a>
+        <a href="https://www.linkedin.com" target="_blank" class="ri-linkedin-line"></a>
+        <a href="https://www.spotify.com" target="_blank" class="ri-spotify-line"></a>
+        <a href="https://www.twitter.com" target="_blank" class="ri-twitter-line"></a>
+        <a href="https://www.discord.com" target="_blank" class="ri-discord-line"></a>
+        <a href="https://www.youtube.com" target="_blank" class="ri-youtube-line"></a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Hedef tarih
+        const targetDate = new Date('2024-08-30T23:59:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "Süre doldu!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = `${days} Gün ${hours} Saat ${minutes} Dakika ${seconds} Saniye`;
+        }
+
+        // Güncellemeyi her saniye yap
+        setInterval(updateCountdown, 1000);
+
+        // İlk yüklemede hemen göster
+        updateCountdown();
+    </script>
+</body>
+</html>

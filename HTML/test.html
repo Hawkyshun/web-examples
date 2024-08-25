@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzS1t2qUjM6ZLzYNH75e4ojt5p5lg4ZSR85n+1a4A" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-9ndCyUaTOVb/tC4mrWvGfD263A0Hi4skBOA5tvsp7IMp5rKTyBvsI5dI7MfnCPhT" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .navbar, .navbar-dark .navbar-nav .nav-link {
+            background-color: #1f1f1f;
+        }
+        .navbar-dark .navbar-brand {
+            color: #e0e0e0;
+        }
+        .container {
+            margin-top: 90px; /* Navbar'ın yüksekliğine göre artırıldı */
+            z-index: 1;
+            position: relative;
+        }
+        .btn-custom {
+            background-color: #333;
+            color: #e0e0e0;
+        }
+        .btn-custom:hover {
+            background-color: #555;
+        }
+        canvas {
+            border: 1px solid #333;
+            background-color: #000;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var canvasVisible = false;
+            var canvas = document.getElementById('myCanvas');
+            var toggleButton = document.getElementById('toggleCanvas');
+            var ctx = canvas.getContext('2d');
+            var text = "Ben Furkan Erdoğan, bir yazılım geliştiricisiyim.\nPython, JavaScript, React ve TypeScript gibi teknolojilerle çalışıyorum.\nAyrıca, görüntü işleme ve derin öğrenme konularında da deneyimim var. \nProjelerimde yenilikçi çözümler geliştirmeyi ve sürekli öğrenmeyi hedefliyorum.";
+
+            function drawText() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Önce temizle
+                ctx.fillStyle = '#e0e0e0'; // Yazı rengi
+                ctx.font = '16px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                var lineHeight = 24; // Satır yüksekliği
+                var lines = text.split('\n');
+                var y = canvas.height / 2 - (lines.length * lineHeight) / 2; // Yazıyı ortalamak için Y koordinatı
+
+                for (var i = 0; i < lines.length; i++) {
+                    ctx.fillText(lines[i], canvas.width / 2, y + (i * lineHeight));
+                }
+            }
+
+            toggleButton.addEventListener('click', function() {
+                canvasVisible = !canvasVisible;
+                canvas.style.display = canvasVisible ? 'block' : 'none';
+                if (canvasVisible) {
+                    drawText();
+                }
+            });
+        });
+    </script>
+    <title>Furkan Erdoğan Webpage</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Furkan Erdoğan</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://linkedin.com/in/hawkyshun" target="_blank">LinkedIn</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top mt-5 pt-5">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Yazılım</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Web Tasarım</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Veri Bilimi</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                        Daha Fazla
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Eğitimler</a>
+                        <a class="dropdown-item" href="#">Araştırmalar</a>
+                        <a class="dropdown-item" href="#">Makale</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1></h1>
+        <h1>Hoş Geldiniz!</h1>
+        <p>Bu sayfa, Furkan Erdoğan'a ait bir portföy sayfasıdır.</p>
+        <button id="toggleCanvas" class="btn btn-custom">Hakkımda</button>
+        <canvas id="myCanvas" width="600" height="400" style="display:none;"></canvas>
+    </div>
+</body>
+
+</html>

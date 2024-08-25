@@ -9,21 +9,17 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fff;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/005/210/773/non_2x/abstract-gradient-background-primary-colors-blue-red-and-yellow-illustration-vector.jpg');
+            background-size: cover;
+            background-position: center;
             color: #333;
-        }
-        header {
-            background-color: #3498db;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: #e74c3c;
+            background-color: rgba(231, 76, 60, 0.9); /* Yarı saydam arka plan */
             color: #fff;
         }
         .navbar .logo img {
@@ -40,6 +36,8 @@
         }
         .container {
             padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8); /* Yarı saydam arka plan */
+            border-radius: 8px;
         }
         .card {
             background-color: #fff;
@@ -92,7 +90,7 @@
         }
         .map-container iframe {
             width: 100%;
-            height: 300px;
+            height: auto;
             border: 0;
         }
         .accordion-button:not(.collapsed) {
@@ -110,7 +108,6 @@
             <a href="#">Kaynaklar</a>
             <a href="#">Kayıt Ol</a>
             <a href="#">Giriş</a>
-            <a href="#">TR / EN</a>
         </div>
     </div>
 
@@ -133,17 +130,73 @@
             </a>
         </div>
 
-        <!-- Bootstrap ve DENEYAP Türkiye hakkında bilgi kısmı -->
+        <!-- Eğitim Bilgileri -->
         <div class="card">
-            <h5>Eğitim Detayları</h5>
-            <p><strong>Bootstrap:</strong> Bootstrap, açık kaynaklı bir CSS çerçevesidir. Web geliştirme sürecini hızlandırmak için kullanılan bu çerçeve, HTML, CSS ve JavaScript bileşenlerini içerir. Kullanıcı dostu arayüzler oluşturmayı kolaylaştırır ve responsive tasarımlar sunar.</p>
-            <p><strong>DENEYAP Türkiye:</strong> DENEYAP Türkiye, gençlerin teknoloji alanındaki yetkinliklerini artırmayı amaçlayan bir projedir. Teknolojik yenilikler ve eğitimlerle gençleri destekler ve onların gelecekteki kariyerlerine yön vermelerine yardımcı olur.</p>
+            <h5>Eğitim Amacı</h5>
+            <p>Bootstrap 5 ile tema ve kullanıcı ara yüzleri geliştirmek ve web projelerinde kişisel tasarımların hazırlanıp kullanılmasını sağlamaktır.</p>
         </div>
 
-        <!-- Sıkça Sorulan Sorular -->
         <div class="card">
-            <h5>Sıkça Sorulan Sorular</h5>
-            <div class="accordion" id="faqAccordion">
+            <h5>Eğitim Özeti</h5>
+            <p>Ücretsiz bir CSS framework’u olan Bootstrap, açık kaynak kodlu bir tasarım aracıdır. Telefon, tablet ve masaüstü bilgisayarlar için farklı ve cihazınızın büyüklüğüyle orantılı şekilde sitenizin görünmesini sağlayan tema ve tasarımları kolaylıkla yapabilirsiniz. Bu eğitim ile Bootstrap'in genel yapısını öğrenecek, kütüphanesini inceleyerek Bootstrap 5 ile web sayfalarının ara yüzünü çok daha kolay ve estetik olacak şekilde hazırlayabileceksiniz.</p>
+        </div>
+
+        <div class="card">
+            <h5>Hedef Kitle</h5>
+            <ul>
+                <li>Bilgisayar ve yazılım mühendisliğine yeni başlayanlar</li>
+                <li>Front-end geliştirme için bir UI kütüphanesi kullanmak isteyenler</li>
+                <li>Kendi UI kütüphanesini oluşturmak isteyenler</li>
+                <li>Web tasarım ile ilgilenen herkes</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h5>Kullanılacak Yazılımlar/Programlar</h5>
+            <ul>
+                <li>Visual Studio Code vb.</li>
+                <li>NodeJS</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h5>Temel Bilgi Ve Beceri Gereksinimler</h5>
+            <ul>
+                <li>Temel HTML bilgisi (Portaldaki HTML5 ile Web Geliştirme eğitiminden yararlanabilirsiniz.)</li>
+                <li>Temel CSS bilgisi (Portaldaki CSS Temelleri eğitiminden yararlanabilirsiniz.)</li>
+                <li>Temel SCSS bilgisi (zorunlu değil)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h5>Kazanımlar</h5>
+            <ul>
+                <li>Şık arayüzler geliştirebileceksiniz.</li>
+                <li>Kendi arayüz tasarımlarını Bootstrap ile uygulayabileceksiniz.</li>
+                <li>Kendi UI kütüphanenizi yapabileceksiniz.</li>
+            </ul>
+        </div>
+
+        <!-- Bootstrap ve DENEYAP Türkiye hakkında bilgi kısmı -->
+        <div class="card">
+            <h5>DENEYAP Türkiye</h5>
+            <p>DENEYAP Teknoloji Atölyeleri, 2018 yılında başlatılan “DENEYAP Türkiye” projesi ile birlikte tüm Türkiye’ye yayılmaktadır.
+
+                Cumhurbaşkanlığımızın “İlk 100 Günlük İcraat Programı” çerçevesinde, 81 İlde 100 DENEYAP Teknoloji Atölyesi kurulmasına yönelik olarak, T.C. Sanayi ve Teknoloji Bakanlığı, T.C. Gençlik ve Spor Bakanlığı, TÜBİTAK ve Türkiye Teknoloji Takımı Vakfı arasında önemli bir iş birliği tesis edilmiştir. Türkiye’de gençlerin, özellikle teknoloji alanında gelişimlerine katkı sağlayan bu dört önemli kurumun katkıları ile DENEYAP Türkiye hayata geçirilmiştir.
+                
+                DENEYAP Türkiye’nin temel amacı, ülkemizin kalkınması için olmazsa olmaz gördüğümüz Milli Teknoloji Hamlesi’nin itici gücünü oluşturarak, teknoloji üretme yetkinliği yüksek genç bireyler yetiştirmektir.
+                
+                Projeye dahil olmak isteyen 4. sınıf ve 5. sınıf, 8. sınıf, 9. sınıf ve lise hazırlık sınıfı kademesindeki öğrenciler, web sitemiz üzerinden duyurulan başvuru süresinde online başvurularını tamamlar. Başvuran adaylar Matematik, Fen, Algoritma ve Genel Kültür alanlarından oluşan toplam 40 soruluk E-sınav, Çevrim İçi Eğitim ve Görev Tamamlama, Uygulama Sınavı olmak üzere üç aşamadan oluşan seçme sürecinden geçerler. Belirlenen kontenjan dahilinde süreci başarıyla tamamlayan öğrencilerimiz DENEYAP Teknoloji Atölyeleri’nde 36 aylık bir eğitim programına dahil olurlar.
+                
+                Geleceğin Teknoloji Yıldızları’nı yetiştiren eğitmen kadromuz, üniversitelerin alanla ilişkili bölümlerinde okuyan lisans ya da lisansüstü üniversite öğrencileri, mezunları, öğretmenler ve sektörde çalışan alan uzmanlarından oluşmaktadır.
+                
+                Tüm eğitmenlerimiz, atölyelerde eğitmenlik yapabilmek için düzenlediğimiz Eğitmen Eğitimi’ne katılırlar. Eğitimlerimizin uygulama ağırlıklı olmasından ötürü her derslikte bir mühendis ve bir öğretmen olmak üzere iki eğitmenimiz vardır. Ayrıca dersliklerimizde, eğitimlerin verimli bir şekilde işlendiğini takip edebilmek amacıyla, haftalık olarak eğitmenleri ve öğrencileri gözlemleyen bir psikoloji stajyerimiz bulunmaktadır.</p>
+        </div>
+
+        <!-- Sıkça Sorulan Sorular (FAQ) -->
+        <div class="card">
+            <h5>Sıkça Sorulan Sorular (FAQ)</h5>
+            <div id="faqAccordion">
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
@@ -154,7 +207,7 @@
                     </div>
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
                         <div class="card-body">
-                            Bootstrap, HTML, CSS ve JavaScript ile web sayfalarını oluşturmayı kolaylaştıran açık kaynaklı bir çerçevedir. Özellikle responsive ve mobil uyumlu tasarımlar için kullanılır.
+                            Bootstrap, açık kaynak kodlu bir CSS çerçevesidir. Web uygulamalarını hızlı ve kolay bir şekilde tasarlamak için HTML, CSS ve JavaScript bileşenleri sunar.
                         </div>
                     </div>
                 </div>
@@ -162,13 +215,13 @@
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                DENEYAP Türkiye'nin amacı nedir?
+                                DENEYAP Türkiye nedir?
                             </button>
                         </h5>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
                         <div class="card-body">
-                            DENEYAP Türkiye, gençlerin teknoloji alanında bilgi ve becerilerini artırmayı, yenilikçi düşünme yeteneklerini geliştirmeyi ve onları geleceğin teknoloji liderleri olarak yetiştirmeyi amaçlar.
+                            DENEYAP Türkiye, gençlere teknoloji ve yazılım alanında eğitimler sunan bir platformdur. Bu eğitimlerle, gençlerin teknolojiye olan ilgilerini artırmayı ve bu alanda yetkin olmalarını sağlamayı hedefler.
                         </div>
                     </div>
                 </div>
@@ -189,7 +242,7 @@
             </div>
         </div>
     </div>
-    
+
     <footer class="footer">
         <a href="https://www.instagram.com" target="_blank" class="ri-instagram-line"></a>
         <a href="https://www.linkedin.com" target="_blank" class="ri-linkedin-line"></a>

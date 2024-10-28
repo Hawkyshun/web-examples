@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>js example</title>
+</head>
+
+<body>
+  <h2>Cars</h2>
+  <p id="x"></p>
+  <p id="y"></p>
+  <p id="demo"></p>
+  <script>
+    const cars = ["Porsche", "Ford", "Chevrolet"];
+    cars[3] = "Dodge";
+    if (cars[3] === "Dodge") {
+      cars[3] = "Toyota";
+    }
+    for (let i = 0; i < cars.length; i++) {
+      cars[i] = cars[i].toUpperCase();
+    }
+    // let x, y, z;
+    // x = 3;
+    // y = 5;
+    // z = x * y;
+
+    // function myFunction() {
+    //   document.getElementById("demo").innerHTML = "Paragraph changed.";
+    // }
+    // document.getElementById("x").innerHTML = "x = " + x;
+    // document.getElementById("y").innerHTML = "y = " + y;
+    document.getElementById("demo").innerHTML =  cars.join(" | ");
+
+
+    // window.alert("alert \nexample"); <!-- ???? -->
+  </script>
+</body>

@@ -9,12 +9,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         :root {
             --primary-color: #2563eb;
             --secondary-color: #3b82f6;
             --gradient-1: linear-gradient(45deg, #2563eb, #3b82f6);
             --gradient-2: linear-gradient(45deg, #7c3aed, #6366f1);
+            --gamer-primary: #ff0055;
+            --gamer-secondary: #9333ea;
+            --gamer-gradient: linear-gradient(45deg, #ff0055, #9333ea);
+            --gamer-bg: #0a001a;
+            --gamer-text: #00ff88;
+            --gamer-neon-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88;
+            --cyber-primary: #ff003c;
+            --cyber-secondary: #00fff9;
+            --cyber-accent: #ff9e00;
+            --cyber-bg: #000614;
+            --cyber-text: #00fff9;
+            --cyber-glow: 0 0 10px var(--cyber-secondary),
+                         0 0 20px var(--cyber-secondary),
+                         0 0 30px var(--cyber-secondary);
         }
 
         .hero-section {
@@ -26,17 +41,18 @@
 
         .card {
             border: none;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: none;
+            opacity: 0.9;
         }
 
         .navbar-custom {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(31, 31, 31, 0.95);
+            backdrop-filter: none;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
@@ -126,16 +142,17 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
         }
 
         .skill-card:hover {
-            transform: translateY(-5px);
+            transform: none;
+            opacity: 0.9;
         }
 
         .progress-bar {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            transition: width 1.5s ease-in-out;
+            background: var(--primary-color);
+            transition: none;
         }
 
         .stat-item {
@@ -379,6 +396,450 @@
         body.dark-mode .text-muted {
             color: #a0a0a0 !important;
         }
+
+        /* Modern Swiper Stilleri */
+        .swiper {
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .swiper-slide {
+            width: 300px;
+            height: 350px;
+            transform: none !important;
+            opacity: 0.5;
+            transition: all 0.5s ease;
+        }
+
+        .swiper-slide-active {
+            transform: none !important;
+            opacity: 1;
+        }
+
+        .certificate-card {
+            display: flex;
+            align-items: center;
+            height: auto;
+            padding: 15px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+        }
+
+        .certificate-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .certificate-content {
+            flex: 1;
+        }
+
+        .certificate-content h5 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .certificate-content p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #a0a0a0;
+        }
+
+        .certificate-overlay {
+            display: none;
+        }
+
+        .swiper-slide {
+            height: auto;
+            transform: none !important;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-slide-active {
+            transform: none !important;
+        }
+
+        /* Modern navigasyon okları */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            color: #fff !important;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px !important;
+            font-weight: bold;
+        }
+
+        .swiper-button-next {
+            right: 10px;
+        }
+
+        .swiper-button-prev {
+            left: 10px;
+        }
+
+        .certificatesSwiper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            z-index: 10;
+        }
+
+        /* Modern pagination */
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: var(--primary-color);
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            width: 20px;
+            border-radius: 5px;
+        }
+
+        /* 3D efekt için */
+        .swiper-slide-active .certificate-card {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .certificatesSwiper {
+            overflow: visible !important;
+            padding: 0 40px !important;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 40px !important;
+            height: 40px !important;
+            background: var(--primary-color) !important;
+            border-radius: 50% !important;
+            color: #fff !important;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px !important;
+            font-weight: bold !important;
+        }
+
+        .swiper-button-next {
+            right: 0 !important;
+        }
+
+        .swiper-button-prev {
+            left: 0 !important;
+        }
+
+        .swiper-button-next.swiper-button-disabled,
+        .swiper-button-prev.swiper-button-disabled {
+            opacity: 0.35 !important;
+            cursor: auto !important;
+            pointer-events: none !important;
+        }
+
+        /* Particles.js optimizasyonu için stil güncellemeleri */
+        #particles-js {
+            opacity: 0.3;
+            pointer-events: none;
+            will-change: transform;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Animasyon optimizasyonları */
+        .project-card, .skill-card, .card {
+            will-change: transform;
+            transform: translateZ(0);  /* GPU hızlandırma */
+        }
+
+        /* Gereksiz animasyonları kaldır */
+        .card:hover {
+            transform: none;
+            transition: none;
+        }
+
+        /* Smooth scroll yerine daha performanslı alternatif */
+        html {
+            scroll-behavior: auto;
+        }
+
+        /* Gamer Mode Stilleri */
+        .gamer-mode {
+            background-color: var(--gamer-bg);
+            color: var(--gamer-text);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Neon border efekti */
+        .gamer-mode .card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--gamer-primary);
+            box-shadow: 0 0 15px var(--gamer-primary),
+                        inset 0 0 15px var(--gamer-primary);
+            animation: neonPulse 2s infinite;
+        }
+
+        /* Siber punk tarzı başlıklar */
+        .gamer-mode h1, .gamer-mode h2, .gamer-mode h3 {
+            color: var(--gamer-text);
+            text-shadow: 0 0 10px var(--gamer-text),
+                         0 0 20px var(--gamer-text),
+                         0 0 30px var(--gamer-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .gamer-mode h1::before, 
+        .gamer-mode h2::before {
+            content: attr(data-text);
+            position: absolute;
+            left: -2px;
+            text-shadow: 2px 0 var(--gamer-primary);
+            top: 0;
+            color: var(--gamer-text);
+            background: var(--gamer-bg);
+            overflow: hidden;
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+
+        /* Gelişmiş cursor trail efekti */
+        .cursor-trail {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .cursor-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--gamer-text);
+            border-radius: 50%;
+            animation: particleFade 1s ease-out forwards;
+        }
+
+        /* Cyber grid arkaplan */
+        .gamer-mode::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(transparent 0%, rgba(0, 255, 136, 0.1) 2%, transparent 3%),
+                linear-gradient(90deg, transparent 0%, rgba(0, 255, 136, 0.1) 2%, transparent 3%);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+            z-index: -1;
+        }
+
+        /* Hover efektleri */
+        .gamer-mode .btn:hover,
+        .gamer-mode .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 30px var(--gamer-primary),
+                        inset 0 0 20px var(--gamer-secondary);
+            transition: all 0.3s ease;
+        }
+
+        /* Animasyonlar */
+        @keyframes neonPulse {
+            0%, 100% {
+                box-shadow: 0 0 15px var(--gamer-primary),
+                            inset 0 0 15px var(--gamer-primary);
+            }
+            50% {
+                box-shadow: 0 0 30px var(--gamer-primary),
+                            inset 0 0 30px var(--gamer-primary);
+            }
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(44px, 450px, 56px, 0);
+            }
+            20% {
+                clip: rect(12px, 450px, 78px, 0);
+            }
+            40% {
+                clip: rect(32px, 450px, 54px, 0);
+            }
+            60% {
+                clip: rect(62px, 450px, 98px, 0);
+            }
+            80% {
+                clip: rect(82px, 450px, 12px, 0);
+            }
+            100% {
+                clip: rect(67px, 450px, 34px, 0);
+            }
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(50px);
+            }
+        }
+
+        /* Gelişmiş navbar */
+        .gamer-mode .navbar-custom {
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid var(--gamer-primary);
+            box-shadow: 0 0 20px var(--gamer-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Progress bar'lar için neon efekt */
+        .gamer-mode .progress-bar {
+            background: var(--gamer-gradient);
+            box-shadow: 0 0 15px var(--gamer-primary);
+            animation: progressGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes progressGlow {
+            0%, 100% {
+                box-shadow: 0 0 15px var(--gamer-primary);
+            }
+            50% {
+                box-shadow: 0 0 30px var(--gamer-primary);
+            }
+        }
+
+        /* Cyberpunk mode stilleri */
+        .cyberpunk-mode {
+            background-color: var(--cyber-bg);
+            color: var(--cyber-text);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .cyberpunk-mode-toggle {
+            background: linear-gradient(45deg, var(--cyber-primary), var(--cyber-secondary));
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 0;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .cyberpunk-mode-toggle:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 20px var(--cyber-primary);
+        }
+
+        .cyberpunk-mode .card {
+            background: rgba(0, 6, 20, 0.8);
+            border: 2px solid var(--cyber-primary);
+            clip-path: polygon(0 5%, 5% 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%);
+            box-shadow: 0 0 15px var(--cyber-primary),
+                        inset 0 0 10px var(--cyber-primary);
+            animation: cyberpunkPulse 2s infinite;
+        }
+
+        .cyberpunk-mode h1,
+        .cyberpunk-mode h2,
+        .cyberpunk-mode h3 {
+            color: var(--cyber-text);
+            text-shadow: var(--cyber-glow);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .cyberpunk-mode::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, var(--cyber-bg) 21px, transparent 1%) center,
+                linear-gradient(var(--cyber-bg) 21px, transparent 1%) center,
+                var(--cyber-secondary);
+            background-size: 22px 22px;
+            opacity: 0.1;
+            animation: gridMove 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes cyberpunkPulse {
+            0%, 100% {
+                box-shadow: 0 0 15px var(--cyber-primary),
+                            inset 0 0 10px var(--cyber-primary);
+            }
+            50% {
+                box-shadow: 0 0 30px var(--cyber-primary),
+                            inset 0 0 20px var(--cyber-primary);
+            }
+        }
+
+        .cyberpunk-mode .progress-bar {
+            background: linear-gradient(90deg, var(--cyber-primary), var(--cyber-secondary));
+            box-shadow: 0 0 15px var(--cyber-secondary);
+        }
+
+        .cyberpunk-mode .navbar-custom {
+            background: rgba(0, 6, 20, 0.9);
+            border-bottom: 2px solid var(--cyber-primary);
+            box-shadow: 0 0 20px var(--cyber-primary);
+        }
+
+        /* Glitch efekti */
+        .cyberpunk-mode .glitch {
+            animation: glitch 2s infinite;
+            position: relative;
+        }
+
+        @keyframes glitch {
+            0% { transform: none; opacity: 1; }
+            7% { transform: skew(-0.5deg, -0.9deg); opacity: 0.75; }
+            10% { transform: none; opacity: 1; }
+            27% { transform: none; opacity: 1; }
+            30% { transform: skew(0.8deg, -0.1deg); opacity: 0.75; }
+            35% { transform: none; opacity: 1; }
+            52% { transform: none; opacity: 1; }
+            55% { transform: skew(-1deg, 0.2deg); opacity: 0.75; }
+            50% { transform: none; opacity: 1; }
+            72% { transform: none; opacity: 1; }
+            75% { transform: skew(0.4deg, 1deg); opacity: 0.75; }
+            80% { transform: none; opacity: 1; }
+            100% { transform: none; opacity: 1; }
+        }
     </style>
 </head>
 <body class="dark-mode">
@@ -396,6 +857,9 @@
                         <span id="darkModeIcon">🌜</span>
                     </label>
                 </div>
+                <button class="cyberpunk-mode-toggle ms-3" onclick="toggleCyberpunkMode()" style="display: none;">
+                    <i class="fas fa-microchip"></i> Cyberpunk Mode
+                </button>
             </div>
         </div>
     </nav>
@@ -418,7 +882,7 @@
                         <span class="typed"></span>
                     </div>
                     <div class="mt-4 d-flex gap-3 animate__animated animate__fadeInUp animate__delay-2s">
-                        <a href="mailto:furkanerdogan2300@gmail.com" class="btn btn-gradient">İletişime Geç</a>
+                        <a href="mailto:furkanerdogan2300@gmail.com" class="btn btn-gradient">Contact</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -441,11 +905,6 @@
         <div class="row">
             <div class="col-md-4">
                 <img src="/Users/furkan.erdogan/etc./FE.jpg" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
-                <div class="text-center">
-                    <a href="#projects" class="btn btn-gradient mt-3" onclick="toggleProjects(event)">
-                        <i class="fas fa-project-diagram me-2"></i>Projelerimi Gör
-                    </a>
-                </div>
             </div>
             <div class="col-md-8">
                 <h2 class="mt-3">Hi, I'm Furkan</h2>
@@ -464,11 +923,11 @@
         </div>
 
         <div class="skills-section py-5">
-            <h2 class="section-title text-center">Yeteneklerim</h2>
+            <h2 class="section-title text-center">My Skills</h2>
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="skill-card p-4">
-                        <h5>Programlama Dilleri</h5>
+                        <h5>Programming Languages</h5>
                         <div class="skill-item mb-3">
                             <div class="d-flex justify-content-between">
                                 <span>Python</span>
@@ -510,113 +969,131 @@
 
         <!-- Add the button for toggling certificates visibility -->
         <div class="text-center mt-4">
-            <button class="btn btn-gradient" onclick="toggleCertificates(event)">Sertifikalarımı Göster</button>
+            <button class="btn btn-gradient" onclick="toggleCertificates(event)">Show My Certificates</button>
         </div>
 
         <!-- Sertifikalarım Section -->
         <div class="certificates-section py-5" id="certificates" style="display: none; opacity: 0; transition: opacity 0.5s ease-in-out;">
             <div class="container">
-                <h2 class="section-title text-center">Sertifikalarım</h2>
-                <div class="row g-4">
-                    <!-- Yeni Sertifika -->
-                    <div class="col-md-4">
-                        <div class="certificate-card">
-                            <img src="https://media.licdn.com/dms/image/v2/C4D0BAQEsx-t-rTm_aw/company-logo_100_100/company-logo_100_100/0/1678089646890/anbean_tantm_danmanlk_logo?e=1743033600&v=beta&t=QfG8nmE7Wz0anx221SxlhW02fvckvj2Deog8_p432LM" alt="Finansal Okuryazarlik Akademisi" class="img-fluid">
-                            <div class="certificate-overlay">
-                                <h5>Finansal Okuryazarlik Akademisi</h5>
-                                <p>anbean</p>
-                                <p>Issued Oct 2024</p>
-                                <a href="https://anbeankampus.co/sertifika/6218377f-2048-4627" class="btn btn-light btn-sm" target="_blank">Görüntüle</a>
+                <h2 class="section-title text-center mb-5">My Certificates</h2>
+                <div class="swiper certificatesSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Finansal Okuryazarlik Akademisi -->
+                        <div class="swiper-slide">
+                            <div class="certificate-card">
+                                <img src="https://media.licdn.com/dms/image/v2/C4D0BAQEsx-t-rTm_aw/company-logo_100_100/company-logo_100_100/0/1678089646890/anbean_tantm_danmanlk_logo?e=1743033600&v=beta&t=QfG8nmE7Wz0anx221SxlhW02fvckvj2Deog8_p432LM" alt="Finansal Okuryazarlik Akademisi">
+                                <div class="certificate-content">
+                                    <h5>Finansal Okuryazarlik Akademisi</h5>
+                                    <p>anbean</p>
+                                    <p>October 2024</p>
+                                    <a href="https://anbeankampus.co/sertifika/6218377f-2048-4627" class="btn btn-sm btn-primary" target="_blank">Show</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Web Tasarim: Bootstrap -->
+                        <div class="swiper-slide">
+                            <div class="certificate-card">
+                                <img src="https://media.licdn.com/dms/image/v2/C560BAQGO3FHKeeGDDA/company-logo_100_100/company-logo_100_100/0/1630588608500?e=1743033600&v=beta&t=LgOuL7Pwbp8mCSUI5oRtGuMXOJqFIAvJ6zdVMCaEIqI" alt="Web Tasarim: Bootstrap">
+                                <div class="certificate-content">
+                                    <h5>Web Tasarim: Bootstrap</h5>
+                                    <p>T.C. Gençlik ve Spor Bakanligi</p>
+                                    <p>September 2024</p>
+                                    <a href="https://drive.google.com/file/d/1JCSDUXUhiIFq2pPIXVeDIS2cZE4RW2zf/view?usp=drivesdk" class="btn btn-sm btn-primary" target="_blank">Show</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Robotik Süreç Otomasyonu -->
+                        <div class="swiper-slide">
+                            <div class="certificate-card">
+                                <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFcpxX22XgISQ/company-logo_100_100/company-logo_100_100/0/1700245645659?e=1743033600&v=beta&t=lEdTMR4HVGo8cPs6KSXw1pFL_1WQGhQNJFZvLPWVa1Q" alt="Softtech Logo">
+                                <div class="certificate-content">
+                                    <h5>Robotik Süreç Otomasyonu (RPA)</h5>
+                                    <p>Softtech</p>
+                                    <p>March 2024</p>
+                                    <a href="https://akademi.softtech.com.tr/softtech/eep/certificate_show_3.aspx?encryptedActivityID=RKPpC%2F3T%2F5yiaXEyUIRTDA%3D%3D&encryptedUserID=v5UujbRP432CuHDtnvcjQg%3D%3D&fromLink=1" class="btn btn-sm btn-primary" target="_blank">Show</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Big Data and Machine Learning -->
+                        <div class="swiper-slide">
+                            <div class="certificate-card">
+                                <img src="https://media.licdn.com/dms/image/v2/C4D0BAQHFNApQF8_cBg/company-logo_100_100/company-logo_100_100/0/1679312613965/istanbul_data_science_academy_logo?e=1743033600&v=beta&t=a6QVsT9Tr7LDNM_WPX6lJFy27ChNszR6gaUOdfrhBkQ" alt="Google Cloud Logo">
+                                <div class="certificate-content">
+                                    <h5>Big Data and Machine Learning on Google Cloud</h5>
+                                    <p>Istanbul Data Science Academy</p>
+                                    <p>April 2023</p>
+                                    <a href="https://drive.google.com/file/d/1DtQ-Wul37Zn7q5pHtTMSkcFYKF0lIp37/view?usp=drivesdk" class="btn btn-sm btn-primary" target="_blank">Show</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Convolutional Neural Networks -->
+                        <div class="swiper-slide">
+                            <div class="certificate-card">
+                                <img src="https://media.licdn.com/dms/image/v2/C560BAQEHKffoI8RwIQ/company-logo_100_100/company-logo_100_100/0/1630672537710/deeplearningai_logo?e=1743033600&v=beta&t=rhYG8ie_KiiCaa3a0MH9BxqRoMWJlITQ9sBaIBe9mX8" alt="DeepLearning.AI Logo">
+                                <div class="certificate-content">
+                                    <h5>Convolutional Neural Networks</h5>
+                                    <p>DeepLearning.AI</p>
+                                    <p>December 2021</p>
+                                    <a href="https://www.coursera.org/account/accomplishments/records/Z64XPHCSW2Y2" class="btn btn-sm btn-primary" target="_blank">Show</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Improving Deep Neural Networks -->
+                        <div class="swiper-slide">
+                            <div class="certificate-card">
+                                <img src="https://media.licdn.com/dms/image/v2/C560BAQEHKffoI8RwIQ/company-logo_100_100/company-logo_100_100/0/1630672537710/deeplearningai_logo?e=1743033600&v=beta&t=rhYG8ie_KiiCaa3a0MH9BxqRoMWJlITQ9sBaIBe9mX8" alt="DeepLearning.AI Logo">
+                                <div class="certificate-content">
+                                    <h5>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</h5>
+                                    <p>DeepLearning.AI</p>
+                                    <p>December 2021</p>
+                                    <a href="https://www.coursera.org/account/accomplishments/records/QBALJE77WBYZ" class="btn btn-sm btn-primary" target="_blank">Show</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Structuring Machine Learning Projects -->
+                        <div class="swiper-slide">
+                            <div class="certificate-card">
+                                <img src="https://media.licdn.com/dms/image/v2/C560BAQEHKffoI8RwIQ/company-logo_100_100/company-logo_100_100/0/1630672537710/deeplearningai_logo?e=1743033600&v=beta&t=rhYG8ie_KiiCaa3a0MH9BxqRoMWJlITQ9sBaIBe9mX8" alt="DeepLearning.AI Logo">
+                                <div class="certificate-content">
+                                    <h5>Structuring Machine Learning Projects</h5>
+                                    <p>DeepLearning.AI</p>
+                                    <p>December 2021</p>
+                                    <a href="https://www.coursera.org/account/accomplishments/records/M2FWZCK8NA79" class="btn btn-sm btn-primary" target="_blank">Show</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Neural Networks and Deep Learning -->
+                        <div class="swiper-slide">
+                            <div class="certificate-card">
+                                <img src="https://media.licdn.com/dms/image/v2/C560BAQEHKffoI8RwIQ/company-logo_100_100/company-logo_100_100/0/1630672537710/deeplearningai_logo?e=1743033600&v=beta&t=rhYG8ie_KiiCaa3a0MH9BxqRoMWJlITQ9sBaIBe9mX8" alt="DeepLearning.AI Logo">
+                                <div class="certificate-content">
+                                    <h5>Neural Networks and Deep Learning</h5>
+                                    <p>DeepLearning.AI</p>
+                                    <p>November 2021</p>
+                                    <a href="https://www.coursera.org/account/accomplishments/records/4TYLKTDYRQX8" class="btn btn-sm btn-primary" target="_blank">Show</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Yeni Sertifika -->
-                    <div class="col-md-4">
-                        <div class="certificate-card">
-                            <img src="https://media.licdn.com/dms/image/v2/C560BAQGO3FHKeeGDDA/company-logo_100_100/company-logo_100_100/0/1630588608500?e=1743033600&v=beta&t=LgOuL7Pwbp8mCSUI5oRtGuMXOJqFIAvJ6zdVMCaEIqI" alt="Web Tasarim: Bootstrap" class="img-fluid">
-                            <div class="certificate-overlay">
-                                <h5>Web Tasarim: Bootstrap</h5>
-                                <p>T.C. Gençlik ve Spor Bakanligi</p>
-                                <p>Issued Sep 2024</p>
-                                <a href="https://drive.google.com/file/d/1JCSDUXUhiIFq2pPIXVeDIS2cZE4RW2zf/view?usp=drivesdk" class="btn btn-light btn-sm" target="_blank">Görüntüle</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Yeni Sertifika -->
-                    <div class="col-md-4">
-                        <div class="certificate-card">
-                            <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFcpxX22XgISQ/company-logo_100_100/company-logo_100_100/0/1700245645659?e=1743033600&v=beta&t=lEdTMR4HVGo8cPs6KSXw1pFL_1WQGhQNJFZvLPWVa1Q" alt="Softtech Logo" class="img-fluid">
-                            <div class="certificate-overlay">
-                                <h5>Robotik Süreç Otomasyonu (RPA)</h5>
-                                <p>Softtech</p>
-                                <p>Issued Mar 2024</p>
-                                <a href="https://akademi.softtech.com.tr/softtech/eep/certificate_show_3.aspx?encryptedActivityID=RKPpC%2F3T%2F5yiaXEyUIRTDA%3D%3D&encryptedUserID=v5UujbRP432CuHDtnvcjQg%3D%3D&fromLink=1" class="btn btn-light btn-sm" target="_blank" title="https://akademi.softtech.com.tr/softtech/eep/certificate_show_3.aspx?encryptedActivityID=RKPpC%2F3T%2F5yiaXEyUIRTDA%3D%3D&encryptedUserID=v5UujbRP432CuHDtnvcjQg%3D%3D&fromLink=1">Görüntüle</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Diğer sertifikalar -->
-                    <div class="col-md-4">
-                        <div class="certificate-card">
-                            <img src="https://media.licdn.com/dms/image/v2/C4D0BAQHFNApQF8_cBg/company-logo_100_100/company-logo_100_100/0/1679312613965/istanbul_data_science_academy_logo?e=1743033600&v=beta&t=a6QVsT9Tr7LDNM_WPX6lJFy27ChNszR6gaUOdfrhBkQ" alt="Google Cloud Logo" class="img-fluid">
-                            <div class="certificate-overlay">
-                                <h5>Big Data and Machine Learning on Google Cloud</h5>
-                                <p>Istanbul Data Science Academy</p>
-                                <p>Issued Apr 2023</p>
-                                <a href="https://drive.google.com/file/d/1DtQ-Wul37Zn7q5pHtTMSkcFYKF0lIp37/view?usp=drivesdk" class="btn btn-light btn-sm" target="_blank" title="https://drive.google.com/file/d/1DtQ-Wul37Zn7q5pHtTMSkcFYKF0lIp37/view?usp=drivesdk">Görüntüle</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="certificate-card">
-                            <img src="https://media.licdn.com/dms/image/v2/C560BAQEHKffoI8RwIQ/company-logo_100_100/company-logo_100_100/0/1630672537710/deeplearningai_logo?e=1743033600&v=beta&t=rhYG8ie_KiiCaa3a0MH9BxqRoMWJlITQ9sBaIBe9mX8" alt="DeepLearning.AI Logo" class="img-fluid">
-                            <div class="certificate-overlay">
-                                <h5>Convolutional Neural Networks</h5>
-                                <p>DeepLearning.AI</p>
-                                <p>Issued Dec 2021</p>
-                                <a href="https://www.coursera.org/account/accomplishments/records/Z64XPHCSW2Y2" class="btn btn-light btn-sm" target="_blank" title="https://www.coursera.org/account/accomplishments/records/Z64XPHCSW2Y2">Görüntüle</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="certificate-card">
-                            <img src="https://media.licdn.com/dms/image/v2/C560BAQEHKffoI8RwIQ/company-logo_100_100/company-logo_100_100/0/1630672537710/deeplearningai_logo?e=1743033600&v=beta&t=rhYG8ie_KiiCaa3a0MH9BxqRoMWJlITQ9sBaIBe9mX8" alt="DeepLearning.AI Logo" class="img-fluid">
-                            <div class="certificate-overlay">
-                                <h5>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</h5>
-                                <p>DeepLearning.AI</p>
-                                <p>Issued Dec 2021</p>
-                                <a href="https://www.coursera.org/account/accomplishments/records/QBALJE77WBYZ" class="btn btn-light btn-sm" target="_blank" title="https://www.coursera.org/account/accomplishments/records/QBALJE77WBYZ">Görüntüle</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="certificate-card">
-                            <img src="https://media.licdn.com/dms/image/v2/C560BAQEHKffoI8RwIQ/company-logo_100_100/company-logo_100_100/0/1630672537710/deeplearningai_logo?e=1743033600&v=beta&t=rhYG8ie_KiiCaa3a0MH9BxqRoMWJlITQ9sBaIBe9mX8" alt="DeepLearning.AI Logo" class="img-fluid">
-                            <div class="certificate-overlay">
-                                <h5>Structuring Machine Learning Projects</h5>
-                                <p>DeepLearning.AI</p>
-                                <p>Issued Dec 2021</p>
-                                <a href="https://www.coursera.org/account/accomplishments/records/M2FWZCK8NA79" class="btn btn-light btn-sm" target="_blank" title="https://www.coursera.org/account/accomplishments/records/M2FWZCK8NA79">Görüntüle</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="certificate-card">
-                            <img src="https://media.licdn.com/dms/image/v2/C560BAQEHKffoI8RwIQ/company-logo_100_100/company-logo_100_100/0/1630672537710/deeplearningai_logo?e=1743033600&v=beta&t=rhYG8ie_KiiCaa3a0MH9BxqRoMWJlITQ9sBaIBe9mX8" alt="DeepLearning.AI Logo" class="img-fluid">
-                            <div class="certificate-overlay">
-                                <h5>Neural Networks and Deep Learning</h5>
-                                <p>DeepLearning.AI</p>
-                                <p>Issued Nov 2021</p>
-                                <a href="https://www.coursera.org/account/accomplishments/records/4TYLKTDYRQX8" class="btn btn-light btn-sm" target="_blank" title="https://www.coursera.org/account/accomplishments/records/4TYLKTDYRQX8">Görüntüle</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Navigation düğmeleri container dışına alındı -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
 
         <!-- Add the button for toggling education visibility -->
         <div class="text-center mt-4">
-            <button class="btn btn-gradient" onclick="toggleEducation(event)">Eğitimimi Göster</button>
+            <button class="btn btn-gradient" onclick="toggleEducation(event)">Show My Education</button>
         </div>
 
         <!-- Eğitim Bölümü -->
@@ -627,7 +1104,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><strong>Firat University</strong></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Master's degree, Software Engineering</h6>
-                        <p class="card-subtitle mb-2 text-muted">Feb 2024</p>
+                        <p class="card-subtitle mb-2 text-muted">February 2024</p>
                         <p class="card-text">
                             Starting with the principles of machine learning and the fundamentals of deep learning, my goal is to grasp the processes of data analysis and modeling. Additionally, I am striving to become knowledgeable in cryptography by learning its basic concepts, aiming to understand secure communication and data protection topics. By examining algorithms based on swarm intelligence, and drawing inspiration from natural systems, I am researching articles to enhance my problem-solving and optimization abilities. I believe that my knowledge in these areas will increase my proficiency in understanding complex systems and generating innovative solutions to the technological challenges of the future.
                         </p>
@@ -643,7 +1120,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><strong>Anadolu University</strong></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Associate's degree, Securities and Capital Markets</h6>
-                        <p class="card-subtitle mb-2 text-muted">Sep 2024</p>
+                        <p class="card-subtitle mb-2 text-muted">September 2024</p>
                         <p class="card-text">
                             I decided to enroll in the Associate Degree Program in Securities and Capital Markets to keep up with the rapidly changing structure of capital markets and gain strong knowledge in this field. I have always been interested in the functioning of financial institutions and the dynamics of capital markets. I believe this program will equip me with the necessary skills in the mathematical, legal, and economic aspects of capital markets. Additionally, it will help me build a solid foundation in the workings of global markets and financial instruments, supporting my career in the finance sector.
                         </p>
@@ -673,7 +1150,7 @@
 
         <!-- İş Deneyimi -->
         <div class="experience-section py-5">
-            <h2 class="section-title text-center">İş Deneyimi</h2>
+            <h2 class="section-title text-center">Work Experience</h2>
             <div class="container">
                 <div class="timeline">
 
@@ -682,7 +1159,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><strong>Softtech</strong></h5>
                             <h6 class="card-subtitle mb-2 text-muted">Mid-Level Software Engineer - AI & Data Analytics</h6>
-                            <p class="card-subtitle mb-2 text-muted">Ekim 2024 - Günümüz</p>
+                            <p class="card-subtitle mb-2 text-muted">October 2024 - Today</p>
                             <p class="card-text">
                                 <ul>
                                     <li>Developed sorting methods and implemented functionality in React components to optimize data processing using Map and similar techniques.</li>
@@ -690,7 +1167,7 @@
                                 </ul>
                             </p>
                             <h6 class="card-subtitle mb-2 text-muted">Software Engineer - AI & Data Analytics</h6>
-                            <p class="card-subtitle mb-2 text-muted">Eylül 2021 - Ekim 2024</p>
+                            <p class="card-subtitle mb-2 text-muted">September 2021 - October 2024</p>
                             <p class="card-text">
                                 <ul>
                                     <li>Designed and developed chatbots using Python, Node.js, and TypeScript, leveraging NLP models for various actions, gateways, and services.</li>
@@ -733,9 +1210,9 @@
                     <!-- Fırat Üniversitesi -->
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h5 class="card-title"><strong>Fırat Üniversitesi</strong></h5>
+                            <h5 class="card-title"><strong>Fırat University</strong></h5>
                             <h6 class="card-subtitle mb-2 text-muted">IT Department Research and Development Engineer</h6>
-                            <p class="card-subtitle mb-2 text-muted">Ekim 2020 - Temmuz 2021</p>
+                            <p class="card-subtitle mb-2 text-muted">October 2020 - July 2021</p>
                             <p class="card-text">
                                 <ul>
                                     <li>Conducted research and development in the IT department at Firat University for the International Symposium on Digital Forensics and Security (ISDFS).</li>
@@ -759,8 +1236,8 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <h5 class="card-title"><strong>Emeltek Yazılım</strong></h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Proje Stajyeri</h6>
-                            <p class="card-subtitle mb-2 text-muted">Haziran 2020 - Eylül 2020</p>
+                            <h6 class="card-subtitle mb-2 text-muted">Project Intern</h6>
+                            <p class="card-subtitle mb-2 text-muted">June 2020 - September 2020</p>
                             <p class="card-text">
                                 <ul>
                                     <li>Developed Python and OpenCV algorithm to improve image and video processing accuracy by cleaning camera backgrounds.</li>
@@ -771,8 +1248,8 @@
                             <div class="skills-used">
                                 <span class="badge bg-primary">OpenCV</span>
                                 <span class="badge bg-primary">Python</span>
-                                <span class="badge bg-primary">Proje Kontrolü</span>
-                                <span class="badge bg-primary">Bilimsel Analiz</span>
+                                <span class="badge bg-primary">Project Control</span>
+                                <span class="badge bg-primary">Scientific Analysis</span>
                             </div>
                         </div>
                     </div>
@@ -793,18 +1270,29 @@
     <script>
         const darkModeSwitch = document.getElementById('darkModeSwitch');
         const darkModeIcon = document.getElementById('darkModeIcon');
+        const cyberpunkButton = document.querySelector('.cyberpunk-mode-toggle');
         
         // Sayfa yüklendiğinde dark mode'u aktif et
         document.body.classList.add('dark-mode');
         darkModeSwitch.checked = true;
         darkModeIcon.textContent = '🌜';
+        cyberpunkButton.style.display = 'block'; // Dark mode açıkken butonu göster
 
         darkModeSwitch.addEventListener('change', function() {
-            document.body.classList.toggle('dark-mode', darkModeSwitch.checked);
-            darkModeIcon.textContent = darkModeSwitch.checked ? '🌜' : '🌞';
+            const isDarkMode = darkModeSwitch.checked;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            darkModeIcon.textContent = isDarkMode ? '🌜' : '🌞';
+            
+            // Dark mode durumuna göre cyberpunk butonunu göster/gizle
+            cyberpunkButton.style.display = isDarkMode ? 'block' : 'none';
+            
+            // Dark mode kapatılırken cyberpunk modu da kapat
+            if (!isDarkMode && document.body.classList.contains('cyberpunk-mode')) {
+                toggleCyberpunkMode();
+            }
             
             // Tercihi localStorage'a kaydet
-            localStorage.setItem('darkMode', darkModeSwitch.checked);
+            localStorage.setItem('darkMode', isDarkMode);
         });
 
         // Sayfa yüklendiğinde kullanıcının önceki tercihini kontrol et
@@ -815,6 +1303,7 @@
                 document.body.classList.toggle('dark-mode', isDarkMode);
                 darkModeSwitch.checked = isDarkMode;
                 darkModeIcon.textContent = isDarkMode ? '🌜' : '🌞';
+                cyberpunkButton.style.display = isDarkMode ? 'block' : 'none';
             }
         });
     </script>
@@ -841,35 +1330,50 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <script>
-        // Particle.js konfigürasyonu
+        // Particles.js konfigürasyonunu optimize et
         particlesJS("particles-js", {
             particles: {
-                number: { value: 80 },
-                color: { value: "#4a90e2" },
-                shape: { type: "circle" },
-                opacity: { 
-                    value: 0.3,
-                    random: true
+                number: { 
+                    value: 15,  // Parçacık sayısını azalt
+                    density: { enable: false }
                 },
-                size: { 
-                    value: 3,
-                    random: true
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#4a90e2",
-                    opacity: 0.2,
-                    width: 1
-                },
+                opacity: { value: 0.1 },
+                size: { value: 1 },
                 move: {
                     enable: true,
-                    speed: 3,
+                    speed: 0.5,  // Hızı azalt
                     direction: "none",
-                    random: true,
-                    out_mode: "out"
+                    random: false,
+                    straight: true,
+                    out_mode: "out",
+                    bounce: false
+                },
+                line_linked: { enable: false }
+            },
+            retina_detect: false,
+            fps_limit: 30
+        });
+
+        // Scroll event listener'ı optimize et
+        const scrollHandler = throttle(() => {
+            // Scroll işlemleri buraya
+        }, 150);  // Throttle süresini artır
+
+        window.addEventListener('scroll', scrollHandler, { passive: true });
+
+        // IntersectionObserver kullanarak lazy loading
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
-            }
+            });
+        }, { threshold: 0.1 });
+
+        // Gerekli elementleri gözlemle
+        document.querySelectorAll('.project-card, .skill-card').forEach(el => {
+            observer.observe(el);
         });
 
         // Typed.js konfigürasyonu
@@ -887,40 +1391,6 @@
     </script>
 
     <script>
-        function toggleProjects(event) {
-            event.preventDefault();
-            const projectsSection = document.getElementById('projects');
-            const isHidden = projectsSection.style.display === 'none';
-
-            if (isHidden) {
-                projectsSection.style.display = 'block';
-                // Smooth görünürlük animasyonu için setTimeout kullanıyoruz
-                setTimeout(() => {
-                    projectsSection.style.opacity = '1';
-                    // Smooth scroll to projects section
-                    projectsSection.scrollIntoView({ behavior: 'smooth' });
-                }, 10);
-            } else {
-                projectsSection.style.opacity = '0';
-                setTimeout(() => {
-                    projectsSection.style.display = 'none';
-                }, 500); // transition süresi kadar bekle
-            }
-
-            // Buton metnini güncelle
-            event.target.textContent = isHidden ? 'Projeleri Gizle' : 'Projelerimi Gör';
-        }
-
-        // Sayfa yüklendiğinde projeleri gizle
-        document.addEventListener('DOMContentLoaded', () => {
-            const projectsSection = document.getElementById('projects');
-            projectsSection.style.display = 'none';
-            projectsSection.style.opacity = '0';
-        });
-    </script>
-
-    <script>
-        // Function to toggle the visibility of the certificates section
         function toggleCertificates(event) {
             event.preventDefault();
             const certificatesSection = document.getElementById('certificates');
@@ -940,7 +1410,7 @@
             }
 
             // Update button text
-            event.target.textContent = isHidden ? 'Sertifikaları Gizle' : 'Sertifikalarımı Göster';
+            event.target.textContent = isHidden ? 'Hide Certificates' : 'Show My Certificates';
         }
 
         // Hide certificates section on page load
@@ -972,7 +1442,7 @@
             }
 
             // Update button text
-            event.target.textContent = isHidden ? 'Eğitimi Gizle' : 'Eğitimimi Göster';
+            event.target.textContent = isHidden ? 'Hide Education' : 'Show My Education';
         }
 
         // Hide education section on page load
@@ -980,6 +1450,190 @@
             const educationSection = document.getElementById('education');
             educationSection.style.display = 'none';
             educationSection.style.opacity = '0';
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Swiper'ı başlatmadan önce elementi kontrol et
+            const swiperElement = document.querySelector('.certificatesSwiper');
+            if (!swiperElement) {
+                console.error('Swiper element not found');
+                return;
+            }
+
+            // Swiper instance'ını oluştur
+            const swiper = new Swiper('.certificatesSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                centeredSlides: true,
+                effect: "coverflow",
+                grabCursor: true,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 2.5,
+                    slideShadows: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    968: {
+                        slidesPerView: 3,
+                    }
+                },
+                on: {
+                    init: function () {
+                        console.log('Swiper initialized successfully');
+                    },
+                    navigationHide: function () {
+                        console.log('Navigation hidden');
+                    },
+                    navigationShow: function () {
+                        console.log('Navigation shown');
+                    }
+                },
+                observer: true,
+                observeParents: true,
+                preloadImages: false,
+                lazy: true,
+                watchSlidesProgress: false,
+                watchSlidesVisibility: false
+            });
+
+            // Sertifikalar görünür olduğunda Swiper'ı güncelle
+            document.querySelector('[onclick="toggleCertificates(event)"]').addEventListener('click', function() {
+                setTimeout(() => {
+                    swiper.update();
+                }, 500);
+            });
+        });
+    </script>
+
+    <!-- Scroll event listener optimizasyonu -->
+    <script>
+        // Throttle fonksiyonu
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            }
+        }
+
+        // Scroll event listener'ı optimize edildi
+        window.addEventListener('scroll', throttle(() => {
+            // Scroll işlemleri
+        }, 100));
+    </script>
+
+    <!-- Audio elementi güncelle -->
+    <audio id="cyberpunkAudio" preload="auto" loop>
+        <source src="assets/cp.mp3" type="audio/mp3">
+        <source src="cp.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        function toggleCyberpunkMode() {
+            const body = document.body;
+            const button = document.querySelector('.cyberpunk-mode-toggle');
+            const audio = document.getElementById('cyberpunkAudio');
+            
+            body.classList.toggle('cyberpunk-mode');
+            button.classList.toggle('active');
+            
+            const isCyberpunkMode = body.classList.contains('cyberpunk-mode');
+            localStorage.setItem('cyberpunkMode', isCyberpunkMode);
+            
+            if (isCyberpunkMode) {
+                enableCyberpunkEffects();
+                // Kullanıcı etkileşimi ile ses çalmayı dene
+                const playPromise = audio.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise
+                        .then(() => {
+                            console.log("Audio started playing successfully");
+                        })
+                        .catch(error => {
+                            console.log("Audio playback failed:", error);
+                            // Kullanıcıya ses çalma izni için bir bildirim göster
+                            alert("Cyberpunk deneyimi için ses efektlerini etkinleştirmek ister misiniz?");
+                        });
+                }
+            } else {
+                disableCyberpunkEffects();
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+
+        function enableCyberpunkEffects() {
+            // Glitch efekti için class ekle
+            document.querySelectorAll('h1, h2, h3').forEach(heading => {
+                heading.classList.add('glitch');
+            });
+            
+            // Neon trail efekti
+            document.addEventListener('mousemove', createCyberTrail);
+        }
+
+        function disableCyberpunkEffects() {
+            // Glitch efektini kaldır
+            document.querySelectorAll('h1, h2, h3').forEach(heading => {
+                heading.classList.remove('glitch');
+            });
+            
+            // Trail efektini kaldır
+            document.removeEventListener('mousemove', createCyberTrail);
+            document.querySelectorAll('.cyber-trail').forEach(el => el.remove());
+        }
+
+        function createCyberTrail(e) {
+            const trail = document.createElement('div');
+            trail.className = 'cyber-trail';
+            trail.style.left = e.pageX + 'px';
+            trail.style.top = e.pageY + 'px';
+            trail.style.background = `linear-gradient(45deg, 
+                ${getComputedStyle(document.documentElement).getPropertyValue('--cyber-primary')},
+                ${getComputedStyle(document.documentElement).getPropertyValue('--cyber-secondary')})`;
+            
+            document.body.appendChild(trail);
+            
+            setTimeout(() => trail.remove(), 1000);
+        }
+
+        // Sayfa yüklendiğinde cyberpunk mode durumunu kontrol et
+        document.addEventListener('DOMContentLoaded', () => {
+            const isCyberpunkMode = localStorage.getItem('cyberpunkMode') === 'true';
+            if (isCyberpunkMode) {
+                document.body.classList.add('cyberpunk-mode');
+                document.querySelector('.cyberpunk-mode-toggle')?.classList.add('active');
+                enableCyberpunkEffects();
+            }
+            
+            // Font'u yükle
+            const link = document.createElement('link');
+            link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap';
+            link.rel = 'stylesheet';
+            document.head.appendChild(link);
         });
     </script>
 </body>
